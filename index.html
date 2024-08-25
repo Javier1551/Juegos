@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria Cristiano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>Juego de Memoria Cristiano</h1>
+        <button id="start-game">Comenzar Juego</button>
+    </div>
+    
+    <div id="game-container" style="display: none;">
+        <div id="game-board"></div>
+        <div id="excellent-message">¡Excelente!!</div>
+        <button id="back-to-menu">Volver al Menú</button>
+    </div>
+
+    <audio id="start-sound" src="sounds/start.mp3"></audio>
+    <audio id="win-sound" src="sounds/win.mp3"></audio>
+    <audio id="menu-sound" src="sounds/menu.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
