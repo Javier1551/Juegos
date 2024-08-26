@@ -1,8 +1,7 @@
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #0f0050;
+    background-color: #1a1a2e;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +9,9 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    background-image: url('background.jpg'); /* Asegúrate de tener la imagen de fondo en tu proyecto */
+    background-size: cover;
+    background-position: center;
 }
 
 h1 {
@@ -17,19 +19,44 @@ h1 {
     text-align: center;
     font-size: 4.5em;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.664);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.623);
+}
+
+#menu, #game-board {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e5c100;
 }
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    max-width: 800px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 35px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .card {
-    width: 140px;
-    height: 200px;
     background-color: #16213e;
     border-radius: 15px;
     display: flex;
@@ -38,11 +65,8 @@ h1 {
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     perspective: 1000px;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+    height: 150px;
+    position: relative;
 }
 
 .card-inner {
@@ -71,9 +95,9 @@ h1 {
 
 .card-front {
     background-color: #0f3460;
-    font-size: 40px;
+    font-size: 1.5em;
     color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.678);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.623);
 }
 
 .card-back {
@@ -82,8 +106,8 @@ h1 {
 }
 
 .card-image {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
 }
 
@@ -100,42 +124,26 @@ h1 {
     font-weight: bold;
     z-index: 1000;
     display: none;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.678);
 }
 
-#menu {
-    text-align: center;
-    margin-top: 20%;
+@media (max-width: 600px) {
+    .card {
+        width: 100px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
 }
 
-#menu button, #back-to-menu {
-    background-color: #ffd700;
-    color: #1a1a2e;
-    border: none;
-    padding: 15px 30px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.678);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+@media (min-width: 601px) {
+    .card {
+        width: 140px;
+        height: 200px;
+    }
 
-#menu button:hover, #back-to-menu:hover {
-    background-color: #e6c200;
-    transform: scale(1.05);
-}
-
-#back-to-menu {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-#game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    h1 {
+        font-size: 2.5em;
+    }
 }
